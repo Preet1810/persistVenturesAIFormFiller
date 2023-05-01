@@ -13,6 +13,22 @@ const UserSchema=new mongoose.Schema(
             required: true,
             // min: 8,
         },
+        fullname: {
+            type: String,
+        },
+        contactNo: {
+            type: Number,
+        },
+        role: {
+            type: String
+        },
+        experience: {
+            type: String
+        },
+        linkedin: {
+            type: String
+        },
+        companies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Company' }],
     },
     { timestamps: true }
 );

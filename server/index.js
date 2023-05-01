@@ -9,7 +9,8 @@ import morgan from "morgan";
 
 //NATIVE IMPORTS
 import authRoutes from "./routes/auth.js";
-
+import formRoutes from "./routes/form.js";
+import { verifyToken } from "./middleware/auth.js";
 /* CONFIGURATIONS */
 dotenv.config();
 const app=express();
@@ -28,7 +29,7 @@ app.use(cors({
 
 
 app.use("/auth", authRoutes);
-
+app.use("/form", formRoutes)
 
 const PORT=process.env.PORT||6001;
 mongoose
